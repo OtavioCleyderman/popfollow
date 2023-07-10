@@ -7,11 +7,6 @@ const cors = require("cors");
 
 require("dotenv").config();
 
-// Configurar o express para leitura de json
-app.use(express.json());
-
-app.use(cors());
-
 // Configurar o middleware express-session
 app.use(
   session({
@@ -20,6 +15,17 @@ app.use(
     saveUninitialized: false
   })
 );
+
+// Configurar o express para leitura de json
+app.use(express.json());
+
+app.use(cors());
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 
 // Configuração da conexão com o banco de dados
 const dbUser = process.env.DB_USER;
@@ -38,7 +44,6 @@ db.once("open", () => {
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: true }));
-
 
   // Rotas
   app.use("/", routes);
