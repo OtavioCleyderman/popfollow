@@ -87,7 +87,7 @@ titleController.addToFavorites = async (req, res) => {
   try {
     const { titleId, userId } = req.body;
 
-    const favoriteExisting = await FavoriteTitle.findOne({titleId});
+    const favoriteExisting = await FavoriteTitle.findOne({ titleId, userId });
 
     if(favoriteExisting) {
       return 
