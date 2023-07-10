@@ -14,7 +14,7 @@
       ]
     },
     {
-      "source": "https://popfollow-server.vercel.app/(.*)",
+      "source": "/popfollow-server.vercel.app/(.*)",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" }
       ]
