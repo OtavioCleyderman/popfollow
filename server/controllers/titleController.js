@@ -92,7 +92,7 @@ titleController.addToFavorites = async (req, res) => {
     if(favoriteExisting) {
       return 
     }
-    // Crie um novo registro no modelo FavoriteTitle
+    
     const favoriteTitle = new FavoriteTitle({
       userId,
       titleId,

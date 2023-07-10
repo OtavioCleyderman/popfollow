@@ -26,7 +26,6 @@ app.use((req, res, next) => {
   next();
 });
 
-
 // Configuração da conexão com o banco de dados
 const dbUser = process.env.DB_USER;
 const dbPassword = process.env.DB_PASS;
